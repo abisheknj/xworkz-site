@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* White */
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 0 0% 100%; /* White as primary */
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 33 100% 94%; /* Soft peach/light orange as secondary */
+    --secondary-foreground: 24 95% 40%;
+
+    --tertiary: 24 95% 50%; /* Vibrant orange as tertiary */
+    
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 24 100% 95%; /* Light orange accent */
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 24 95% 50%; /* Orange ring */
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 24 95% 50%; /* Orange for sidebar */
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 33 100% 94%; /* Light orange for sidebar accent */
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 24 100% 90%;
+    --sidebar-ring: 24 95% 50%;
+  }
+
+  .dark {
+    --background: 0 0% 0%; /* Pure black */
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 0 0% 100%; /* White stays as primary */
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 33 30% 20%; /* Darker peach/orange for dark mode */
+    --secondary-foreground: 33 100% 94%;
+
+    --tertiary: 24 95% 50%; /* Orange remains the tertiary color */
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 24 60% 30%; /* Darker orange accent for dark mode */
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 24 95% 50%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 24 95% 50%; /* Orange for sidebar in dark mode */
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 24 95% 50%;
+  }
+
+  html, body, * {
+    transition-property: background-color, color, border-color, box-shadow, fill, stroke;
+    transition-duration: 100ms;
+    transition-timing-function: ease-in-out;
+  }
+  
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes glow-border {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+.animate-glow-border {
+  animation: glow-border 2s linear infinite;
+}
+
+.glitter-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fffbe6 0%, #ffe066 60%, #ff9800 90%, transparent 100%);
+  box-shadow: 0 0 8px 2px #ffe066cc, 0 0 16px 4px #ff980044;
+  position: absolute;
+  animation: glitter-move 2.5s linear infinite;
+}
+@keyframes glitter-move {
+  0%   { top: -9px; left: -9px; }
+  24%  { top: -9px; left: calc(100% - 9px); }
+  25%  { top: -9px; left: calc(100% - 9px); }
+  49%  { top: calc(100% - 9px); left: calc(100% - 9px); }
+  50%  { top: calc(100% - 9px); left: calc(100% - 9px); }
+  74%  { top: calc(100% - 9px); left: -9px; }
+  75%  { top: calc(100% - 9px); left: -9px; }
+  99%  { top: -9px; left: -9px; }
+  100% { top: -9px; left: -9px; }
+}
