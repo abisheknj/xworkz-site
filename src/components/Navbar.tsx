@@ -16,7 +16,7 @@ import { cn } from "@/lib/utils";
 // Reusable Logo component
 export const Logo = ({ className = "" }) => (
   <img
-    src="src/assets/xworkz-logo.png"
+    src="assets/xworkz-logo.png"
     alt="Xworkz Logo"
     className={`h-12 w-auto ${className}`}
     style={{ maxHeight: '50px' }}

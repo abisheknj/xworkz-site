@@ -15,7 +15,7 @@ const queryClient = new QueryClient();
 const App = () => (
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider defaultTheme="light" storageKey="codecamp-theme">
+      <ThemeProvider defaultTheme="dark" storageKey="codecamp-theme">
         <TooltipProvider>
           <BrowserRouter>
             <Routes>
